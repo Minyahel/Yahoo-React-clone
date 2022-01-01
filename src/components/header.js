@@ -4,7 +4,7 @@ function Header() {
   return (
     <div>
       <div>
-        <h1 style={{ display: "inline" }}>Yahoo!</h1>
+        <h1 style={{ display: "inline" }}><img src="https://s.yimg.com/rz/p/yahoo_homepage_en-US_s_f_p_bestfit_homepage.png"/></h1>
         <form style={{ display: "inline" }}>
           <input type={"search"} />
         </form>

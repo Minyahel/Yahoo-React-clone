@@ -1,0 +1,44 @@
+[   
+    {
+        "category": "Entertainment",
+        "title" : "lorem ipsum",
+        "subtext": "lorem ipsum dolor amet this that",
+        "source": "gala",
+        "image": "https://cdn.pixabay.com/photo/2021/12/11/07/59/hotel-6862159_960_720.jpg"
+    },
+    {
+        "category": "Entertainment",
+        "title" : "lorem ipsum",
+        "subtext": "lorem ipsum dolor amet this that",
+        "source": "gala",
+        "image": "https://cdn.pixabay.com/photo/2020/12/18/13/05/christmas-5841992_960_720.jpg"
+    },
+    {
+        "category": "Entertainment",
+        "title" : "lorem ipsum",
+        "subtext": "lorem ipsum dolor amet this that",
+        "source": "gala",
+        "image": "https://cdn.pixabay.com/photo/2021/12/27/01/30/christmas-6896107_960_720.jpg"
+    },
+    {
+        "category": "Entertainment",
+        "title" : "lorem ipsum",
+        "subtext": "lorem ipsum dolor amet this that",
+        "source": "gala",
+        "image": "https://cdn.pixabay.com/photo/2021/01/06/09/19/dresden-5893714_960_720.jpg"
+    },
+    {
+        "category": "Entertainment",
+        "title" : "lorem ipsum",
+        "subtext": "lorem ipsum dolor amet this that",
+        "source": "gala",
+        "image": "https://cdn.pixabay.com/photo/2021/12/23/16/38/animal-6889575_960_720.jpg"
+    },
+    {
+        "category": "Entertainment",
+        "title" : "lorem ipsum",
+        "subtext": "lorem ipsum dolor amet this that",
+        "source": "gala",
+        "image": "https://cdn.pixabay.com/photo/2021/12/01/17/52/snow-6838768__340.jpg"
+    }
+]
