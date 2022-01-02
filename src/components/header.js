@@ -1,9 +1,32 @@
 import React from "react";
-import AppBar from '@mui/material/AppBar';
+import AppBar from "@mui/material/AppBar";
+import { useScrollTrigger } from "@mui/material";
+
+function ElevationScroll(props) {
+  const { children, window } = props;
+
+  let comp = children;
+
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+    target: window ? window() : undefined,
+    
+  });
+
+  if (trigger) {
+    comp = <AppBar>{children.props.children[0]}</AppBar>
+  }
+
+  return React.cloneElement(comp, {
+    elevation: trigger ? 4 : 0,
+  });
+}
 
 function Header() {
   return (
-    <AppBar color="de">
+    <ElevationScroll>
+      <AppBar>
         <div>
           <h1 style={{ display: "inline" }}>
             <img src="https://s.yimg.com/rz/p/yahoo_homepage_en-US_s_f_p_bestfit_homepage.png" />
@@ -15,8 +38,8 @@ function Header() {
           <p style={{ display: "inline" }}>Notification Icon</p>
           <p style={{ display: "inline" }}>Mail</p>
         </div>
-        <br/>
-        <div>
+        <br />
+        <div style={{transition: "2s"}}>
           <a>Mail</a>
           <a>Coronavirus</a>
           <a>Messages</a>
@@ -27,7 +50,8 @@ function Header() {
           <a>weather</a>
           <a>Further...</a>
         </div>
-    </AppBar>
+      </AppBar>
+    </ElevationScroll>
   );
 }
 
