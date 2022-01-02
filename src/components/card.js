@@ -1,5 +1,5 @@
 import React from "react";
-import Paper from "@mui/material/Paper";
+
 
 function Card(props) {
   console.log(props.data);
