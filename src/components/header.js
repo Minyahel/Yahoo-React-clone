@@ -2,6 +2,8 @@ import React, { Component, useEffect, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import { useScrollTrigger } from "@mui/material";
 import { CSSTransition } from "react-transition-group"; // ES6
+import "../header.css";
+import SearchIcon from "@mui/icons-material/Search";
 
 function ElevationScroll(props) {
   const { children, window } = props;
@@ -36,36 +38,42 @@ function Header(props) {
 
   return (
     <ElevationScroll hide={handlerFalse} show={handlerTrue}>
-      <AppBar>
-        <div>
-          <h1 style={{ display: "inline" }}>
-            <img src="https://s.yimg.com/rz/p/yahoo_homepage_en-US_s_f_p_bestfit_homepage.png" />
-          </h1>
-          <form style={{ display: "inline" }}>
-            <input type={"search"} />
-          </form>
-          <button>Register</button>
-          <p style={{ display: "inline" }}>Notification Icon</p>
-          <p style={{ display: "inline" }}>Mail</p>
+      <AppBar className="appBar">
+        <div className="header">
+          <div id="headerTop">
+            <h1 style={{ display: "inline" }}>
+              <img src="https://s.yimg.com/rz/p/yahoo_homepage_en-US_s_f_p_bestfit_homepage.png" />
+            </h1>
+            <form style={{ display: "inline" }}>
+              <span>
+                <input type={"search"} id="search" />
+                <SearchIcon id="searchIcon" />
+              </span>
+            </form>
+            <button id="register">Register</button>
+            <p style={{ display: "inline" }}>Notification Icon</p>
+            <p style={{ display: "inline" }}>Mail</p>
+          </div>
+          <div
+            style={{
+              overflow: "hidden",
+              transition: "all .2s",
+              height: isVisible ? "23.636px" : "0",
+            }}
+            className="disappear"
+            id="headerBottom"
+          >
+            <a href="#">Mail</a>
+            <a href="#">Coronavirus</a>
+            <a href="#">Messages</a>
+            <a href="#">Sports</a>
+            <a href="#">Finances</a>
+            <a href="#">Stars</a>
+            <a href="#">Style</a>
+            <a href="#">weather</a>
+            <a href="#">Further...</a>
+          </div>
         </div>
-        <br />
-        <CSSTransition
-          timeout={3000}
-        >
-          {isVisible && (
-            <div>
-              <a>Mail</a>
-              <a>Coronavirus</a>
-              <a>Messages</a>
-              <a>Sports</a>
-              <a>Finances</a>
-              <a>Stars</a>
-              <a>Style</a>
-              <a>weather</a>
-              <a>Further...</a>
-            </div>
-          )}
-        </CSSTransition>
       </AppBar>
     </ElevationScroll>
   );

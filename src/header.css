@@ -1,0 +1,47 @@
+.appBar {
+    background-color: white !important;
+    color: black !important;
+}
+
+.header {
+    width: 65vw ;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#headerTop {
+    display: flex;
+    justify-content: space-between;
+}
+
+#headerBottom {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#headerBottom a {
+    padding: 7px;
+}
+
+#search {
+    width: 35vw;
+}
+
+#searchIcon {
+    border: solid #188FFF 2px;
+    color: white;
+    background-color: #188FFF;
+    height: 100%;
+}
+
+#register {
+    border: solid 1px #6001D2;
+    border-radius: 30px;
+    background-color: white;
+    color: #6001D2;
+    height: fit-content;
+    padding-left: 15px;
+    padding-right: 15px;
+}

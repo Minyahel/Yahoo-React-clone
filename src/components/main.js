@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import '../main.css';
+
 
 import Card  from "./card";
 
@@ -35,7 +37,7 @@ class Main extends Component {
 
     render() {
         return(
-            <div>
+            <div className="main">
                 Main Component
                 {this.state.cards}
             </div>

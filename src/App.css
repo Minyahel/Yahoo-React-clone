@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  width: 65vw;
+  margin: auto;
 }
 
 .App-logo {
@@ -40,3 +42,9 @@
 #hide {
   transition: 0.5s;
 }
+
+.disappear a {
+  text-decoration: none;
+  color: black;
+}
+
