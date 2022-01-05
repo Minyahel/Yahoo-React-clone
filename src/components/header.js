@@ -1,31 +1,41 @@
-import React from "react";
+import React, { Component, useEffect, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import { useScrollTrigger } from "@mui/material";
+import { CSSTransition } from "react-transition-group"; // ES6
 
 function ElevationScroll(props) {
   const { children, window } = props;
-
-  let comp = children;
 
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0,
     target: window ? window() : undefined,
-    
   });
 
   if (trigger) {
-    comp = <AppBar>{children.props.children[0]}</AppBar>
+    props.hide();
+  } else {
+    props.show();
   }
 
-  return React.cloneElement(comp, {
+  return React.cloneElement(children, {
     elevation: trigger ? 4 : 0,
   });
 }
 
-function Header() {
+function Header(props) {
+  const [isVisible, setIsVisible] = useState(true);
+
+  function handlerFalse() {
+    setIsVisible(false);
+  }
+
+  function handlerTrue() {
+    setIsVisible(true);
+  }
+
   return (
-    <ElevationScroll>
+    <ElevationScroll hide={handlerFalse} show={handlerTrue}>
       <AppBar>
         <div>
           <h1 style={{ display: "inline" }}>
@@ -39,17 +49,23 @@ function Header() {
           <p style={{ display: "inline" }}>Mail</p>
         </div>
         <br />
-        <div style={{transition: "2s"}}>
-          <a>Mail</a>
-          <a>Coronavirus</a>
-          <a>Messages</a>
-          <a>Sports</a>
-          <a>Finances</a>
-          <a>Stars</a>
-          <a>Style</a>
-          <a>weather</a>
-          <a>Further...</a>
-        </div>
+        <CSSTransition
+          timeout={3000}
+        >
+          {isVisible && (
+            <div>
+              <a>Mail</a>
+              <a>Coronavirus</a>
+              <a>Messages</a>
+              <a>Sports</a>
+              <a>Finances</a>
+              <a>Stars</a>
+              <a>Style</a>
+              <a>weather</a>
+              <a>Further...</a>
+            </div>
+          )}
+        </CSSTransition>
       </AppBar>
     </ElevationScroll>
   );
