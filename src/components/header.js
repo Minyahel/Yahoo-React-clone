@@ -45,20 +45,20 @@ function Header(props) {
               <img src="https://s.yimg.com/rz/p/yahoo_homepage_en-US_s_f_p_bestfit_homepage.png" />
             </h1>
             <form style={{ display: "inline" }}>
-              <span>
+              <div id="searchGroup">
                 <input type={"search"} id="search" />
                 <SearchIcon id="searchIcon" />
-              </span>
+              </div>
             </form>
             <button id="register">Register</button>
-            <p style={{ display: "inline" }}>Notification Icon</p>
-            <p style={{ display: "inline" }}>Mail</p>
+            <span id="notification"><img src={process.env.PUBLIC_URL + "sprites.png"} id="notificationIcon"/></span>
+            <span id="mail"><img src={process.env.PUBLIC_URL + "sprites.png"} id="mailIcon"/></span><label>Mail</label>
           </div>
           <div
             style={{
               overflow: "hidden",
-              transition: "all .2s",
-              height: isVisible ? "23.636px" : "0",
+              transition: "all .3s",
+              height: isVisible ? "32px" : "0",
             }}
             className="disappear"
             id="headerBottom"
